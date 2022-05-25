@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/fec365c2f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/estilos-base.css')}}">
+</head>
+<body>
+    <!-- Barra de navegacion -->
+    <header>
+        <nav class="navbar">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <a href="/inicio" class="enlace">
+                <img src="{{ url_for('static', filename='img/logo-Tulipan.png') }}" alt="Tulipan Spa" class="logo">
+            </a>
+            <ul>
+                <li><a href="/inicio">Inicio</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/promociones">Promociones</a></li>
+                <li><a href="/agendar-cita">Agendar Cita</a></li>
+                <li><a href="/iniciar-sesion">Iniciar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Contenido de las demas paginas -->
+    {%block content%}
+    {%endblock%}
+    <!-- Pie de pagina con informacion de la empresa -->
+    <footer>
+        <div class="contenedor">
+            <!-- logo de pie de pagina -->
+            <div class="logo2">
+                <img src="{{ url_for('static', filename='img/logo-Tulipan.png') }}" alt="logo_tulipan">
+            </div>
+            <!-- texto de informacion sobre la empresa -->
+            <div class="info">
+                <p class="texto">Los Patios Norte de Santander <br> Avenida 10 # 22 - 04 barrio</p>
+            </div>
+            <!-- redes sociales de la empresa -->
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/Tdivipanspadeunas"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/tulipanspadeunas/?hl=es"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+</body>
+</html>

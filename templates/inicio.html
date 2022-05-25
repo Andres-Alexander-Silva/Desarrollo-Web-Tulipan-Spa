@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{title}}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-inicio.css') }}">
+    
+</head>
+<body>
+    {% extends 'base/base.html' %}
+    {%block content%}
+    <main class="main">
+        <div class="title">
+            <p class="texto">Conoce Nuestros Diseños</p>
+        </div>
+        <div class="buttom">
+            <a href="/agregar-imagen" class="agregar-img">Agregar imagen</a>
+            <a href="#" class="eliminar-img">Eliminar imagen</a>
+        </div>
+        <div class="seccion1">
+            <div class="contenedor-galeri">
+                <div class="contenedor-imgs">
+                    <img src="{{ url_for('static', filename='img/foto2.jpg') }}" alt="foto" class="imgs">
+                </div>
+                <div class="contenedor-imgs">
+                    <img src="{{ url_for('static', filename='img/foto1.jpg') }}" alt="foto" class="imgs">
+                </div>
+                <div class="contenedor-imgs">
+                    <img src="{{ url_for('static', filename='img/foto3.jpg') }}" alt="foto" class="imgs">
+                </div>
+                <div class="contenedor-imgs">
+                    <img src="{{ url_for('static', filename='img/foto5.jpg') }}" alt="foto" class="imgs">
+                </div>
+            </div>
+        </div>
+        <div class="title2">
+            <p class="texto">Promociones y Noticias</p>
+        </div>
+        <div class="buttom">
+            <a href="/agregar-noticia" class="agregar-prom-noti">Agregar Noticias</a>
+            <a href="#" class="eliminar-prom-noti">Eliminar Noticias</a>
+        </div>
+        <div class="seccion2">
+            <div class="contenedor-prom">
+                <div class="contenedor-imgs-prom">
+                    <img src="{{ url_for('static', filename='img/promocion1.jpg') }}" alt="promocion" class="imgs2">
+                </div>
+                <div class="contenedor-imgs-prom">
+                    <img src="{{ url_for('static', filename='img/noticia1.jpg') }}" alt="promocion" class="imgs2">
+                </div>
+                <div class="contenedor-imgs-prom">
+                    <img src="{{ url_for('static', filename='img/noticia2.jpg') }}" alt="promocion" class="imgs2">
+                </div>
+            </div>
+        </div>
+    </main>
+    {%endblock%}
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* Fuente personalizada para la pagina */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Estilos del main o contenedor principal */
+.main{
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("../img/Fondo-Tulipnes.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.title{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding: 25px 0;
+}
+.buttom{
+    display: flex;
+    margin: 0 0 20px 0;
+    justify-content: center;
+}
+.agregar-img{
+    text-decoration: none;
+    background: #DB4C48;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+.agregar-prom-noti{
+    text-decoration: none;
+    background: #DB4C48;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+.eliminar-img{
+    text-decoration: none;
+    background: #DB4C48;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.eliminar-prom-noti {
+    text-decoration: none;
+    background: #DB4C48;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.eliminar-prom-noti:hover {
+    background: #ECA8A7;
+    color: #000;
+}
+.eliminar-img:hover{
+    background: #ECA8A7;
+    color: #000;
+}
+.agregar-img:hover{
+    background: #ECA8A7;
+    color: #000;
+}
+.agregar-prom-noti:hover{
+    background: #ECA8A7;
+    color: #000;
+}
+.seccion1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.contenedor-galeri{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.contenedor-imgs{
+    display: flex;
+    background: #E58183;
+    margin: 10px 30px;
+    padding: 8px;
+    border-radius: 15px;
+}
+.imgs{
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+.title2{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding: 25px 0;
+}
+.seccion2{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.contenedor-prom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    margin: 20px;
+}
+.contenedor-imgs-prom{
+    display: flex;
+    margin: 10px 30px;
+}
+.imgs2{
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+@media (max-width: 800px){
+    .seccion1{
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-galeri{
+        display: inline-block;
+        text-align: center;
+    }
+    .contenedor-imgs{
+        margin: 20px 10px;
+    }
+    .seccion2{
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-prom{
+        display: inline-block;
+        justify-content: center;
+    }
+    .contenedor-imgs-prom{
+        margin: 15px 10px;
+    }
+    .imgs{
+        object-fit: contain;
+    }
+    .main{
+        padding: 20px;
+        min-height: 100vh;
+        background-image: url("../img/fondo-responsive.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+}

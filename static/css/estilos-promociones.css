@@ -1,0 +1,112 @@
+/* Fuente personalizada para la pagina */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Estilos del main o contenedor principal */
+.main-prom{
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("../img/Fondo-Tulipnes.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contend-prom{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.title-prom{
+    display: flex;
+    justify-content: center;
+}
+.title-prom p{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding: 25px;
+}
+
+.btns-prom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-agregar-prom {
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+    background: #DB4C48;
+    padding: 10px;
+}
+
+.btn-eliminar-prom {
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+    background: #DB4C48;
+    padding: 10px;
+}
+
+.btn-agregar-prom:hover {
+    background: #ECA8A7;
+    color: #000;
+}
+
+.btn-eliminar-prom:hover {
+    background: #ECA8A7;
+    color: #000;
+}
+.contend-img-promocion {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    margin: 35px;
+}
+.img-promocion {
+    display: flex;
+    margin: 10px 30px;
+}
+.foto-prom {
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px){
+    .main-prom{
+        padding: 20px;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        background-image: url("../img/fondo-responsive.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .img-promocion {
+        margin: 15px 10px;
+    }
+    .foto-prom{
+        height: 200px;
+        object-fit: contain;
+    }
+    .btn-agregar-prom {
+        font-size: 12px;
+    }
+    .btn-eliminar-prom {
+        font-size: 12px;
+    }
+}

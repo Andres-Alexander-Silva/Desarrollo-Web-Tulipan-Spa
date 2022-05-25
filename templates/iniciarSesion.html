@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{{title}}{%endblock%}</title>
+    <script src="https://kit.fontawesome.com/fec365c2f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-inicio-sesion.css') }}">
+</head>
+<body>
+    <main class="contenedor">
+        <div class="content-form">
+            <p class="title">Iniciar Sesion</p>
+            <div class="content-img">
+                <img src="{{ url_for('static', filename='img/logo-Tulipan-Spa.png') }}" alt="logo" class="logo">
+            </div>
+            <form action="" class="formulario" method="post">
+                <div class="usuario">
+                    <i class="fa-solid fa-user icono-user"></i>
+                    <input type="text" class="user" name="usuario" placeholder="Usuario" required>
+                </div>
+                <div class="contrasegna">
+                    <i class="fa-solid fa-key icono-pass"></i>
+                    <input type="password" class="pass" name="contraseña" placeholder="Contraseña" required>
+                </div>
+                <div class="contra-olvi">
+                    <a href="#">Olvistate tu contraseña?</a>
+                </div>
+                <div class="btn">
+                    <input type="submit" value="Iniciar">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

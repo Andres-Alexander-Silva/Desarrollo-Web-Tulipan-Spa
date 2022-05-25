@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{{title}}{%endblock%}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-promociones.css') }}">
+</head>
+<body>
+    {% extends 'base/base.html' %}
+    {%block content%}
+    <main class="main-prom">
+        <div class="contend-prom">
+            <div class="title-prom">
+                <p>Promociones y Ofertas</p>
+            </div>
+            <div class="btns-prom">
+                <a href="/agregar-Promocion" class="btn-agregar-prom">Agregar Promoción</a>
+                <a href="#" class="btn-eliminar-prom">Eliminar Promoción</a>
+            </div>
+            <div class="contend-img-promocion">
+                <div class="img-promocion">
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='img/promocion1.jpg') }}" 
+                        alt="promocion" class="foto-prom">
+                    </a>
+                </div>
+                <div class="img-promocion">
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='img/promocion2.jpg') }}" 
+                        alt="promocion" class="foto-prom">
+                    </a>
+                </div>
+                <div class="img-promocion">
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='img/promocion2.jpg') }}" 
+                        alt="promocion" class="foto-prom">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    {%endblock%}
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* Fuente personalizada para la pagina */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Estilos del main o contenedor principal */
+.principal-contend{
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("../img/Fondo-Tulipnes.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.contend-global-servis{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.title-servis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-servis p{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0;
+}
+.btn-servis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-agregar-servis{
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+    background: #DB4C48;
+    padding: 10px;
+}
+.btn-eliminar-servis{
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+    background: #DB4C48;
+    padding: 10px;
+}
+.btn-agregar-servis:hover{
+    background: #ECA8A7;
+    color: #000;
+}
+.btn-eliminar-servis:hover{
+    background: #ECA8A7;
+    color: #000;
+}
+.contend-servis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+.servis{
+    display: block;
+    background: #ECA8A7;
+    margin: 0px 45px;
+    margin-bottom: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 220px;
+    justify-content: center;
+    align-items: center;
+}
+.img-servis{
+    display: flex;
+    margin-right: 15px;
+    padding: 5px;
+}
+.img-servis img{
+    object-fit: contain;
+    border-radius: 10px;
+    height: 200px;
+}
+.info-servis{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 30px;
+    max-width: 150px;
+}
+.title-servis-contend p{
+    margin: 15px 0;
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: justify;
+    text-align: center;
+}
+.precio-servis{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 150px;
+}
+.precio-servis p{
+    font-size: 18px;
+    font-weight: 400;
+    text-align: justify;
+    text-align: center;
+}
+@media (max-width: 800px){
+    .principal-contend{
+        padding: 20px;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        background-image: url("../img/fondo-responsive.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .servis{
+        display: block;
+        width: 170px;
+        margin-bottom: 25px;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-servis img{
+        height: 150px;
+    }
+    .title-servis-contend p{
+        font-size: 15px;
+        text-align: center;
+    }
+    .info-servis{
+        margin-left: 8px;
+    }
+    .precio-servis p{
+        font-size: 15px;
+        text-align: center;
+    }
+    .btn-agregar-servis, .btn-eliminar-servis{
+        font-size: 12px;
+    }
+}

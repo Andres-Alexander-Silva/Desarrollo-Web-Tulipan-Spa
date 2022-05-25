@@ -1,0 +1,148 @@
+/* Fuente personalizada para la pagina */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Estilos del main o contenedor principal */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("../img/Fondo-Tulipnes.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-form{
+    justify-content: center;
+    margin-top: 5%;
+    padding: 10px;
+    background: #F4D5D3;
+    border-radius: 10px;
+    width: 380px;
+    height: auto;
+}
+.content-img{
+    text-align: center;
+    background: #F4D5D3;
+}
+.formulario{
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #F4D5D3;
+    position: relative;
+}
+.usuario{
+    background: #F4D5D3;
+    height: 45px;
+    position: relative;
+    margin-bottom: 15px;
+}
+.contrasegna{
+    background: #F4D5D3;
+    height: 45px;
+    position: relative;
+    margin-bottom: 15px;
+}
+.icono-user{
+    font-size: 29px;
+    background: #DB4C48;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icono-pass{
+    font-size: 25px;
+    background: #DB4C48;
+    padding: 12px 10px;
+    color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.user{
+    width: 80%;
+    height: 100%;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 60px;
+    border: 2px solid #DB4C48;
+    background: #fff;
+}
+.pass{
+    width: 80%;
+    height: 100%;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 60px;
+    border: 2px solid #DB4C48;
+    background: #fff;
+}
+.title{
+    justify-content: center;
+    text-align: center;
+    color: #DB4C48;
+    font-size: 30px;
+    font-weight: bold;
+    background: #F4D5D3;
+}
+.logo{
+    font-size: 20px;
+    border-radius: 150px;
+    margin: 20px;
+}
+.contra-olvi{
+    margin-bottom: 15px;
+    background: #F4D5D3;
+}
+.contra-olvi a{
+    background: #F4D5D3;
+    text-decoration: none;
+    color: #000;
+}
+.btn{
+    justify-content: center;
+    text-align: center;
+    background: #F4D5D3;
+}
+.btn input{
+    background: #E58183;
+    font-size: 20px;
+    padding: 5px 35px;
+    font-weight: 500;
+    outline: none;
+    border: 2px solid #E58183;
+    border-radius: 5px;
+    color: #000;
+}
+.btn input:hover{
+    background: #DB4C48;
+    color: #fff;
+    transition: all .2s;
+    border: 2px solid #DB4C48;
+}
+@media (max-width: 800px){
+    *{
+        background-image: url("../img/fondo-responsive.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .content-form{
+        width: 300px;
+        margin-top: 10vh;
+    }
+}

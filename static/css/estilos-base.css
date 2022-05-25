@@ -1,0 +1,135 @@
+/* Fuente personalizada para la pagina */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Estilos predeterminados para toda la pagina */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+/* Estilos de la barra de navegacion (Nav-Bar) */
+.navbar{
+    background: #ECA8A7;
+    height: 80px;
+}
+.enlace{
+    position: absolute;
+    padding: 10px 8px;
+}
+.logo{
+    height: 50px;
+}
+.navbar ul{
+    float: right;
+    margin-right: 10px;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 10px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 7px 13px;
+}
+.navbar ul li a:hover{
+    background: #E58183;
+    color: #000;
+    border-radius: 5px;
+    transition: .3s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+/* Estilos de el peide de pagina (Footer) */
+.contenedor{
+    background: #ECA8A7;
+    margin-top: auto;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 8px;
+}
+.logo2 img{
+    height: 45px;
+}
+.info {
+    margin: 0px auto;
+}
+.info p{
+    font-size: 15px;
+    font-weight: 400 solid;
+}
+.social a{
+    font-size: 30px;
+    text-decoration: none;
+    padding: 0 5px;
+    color: #000;
+}
+/* Estilos responsive desing tablet */
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 5px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+/* Estilos responsive desing movil */
+@media (max-width: 900px) {
+    .checkbtn{
+        display: block;
+    }
+    .navbar ul{
+        position: absolute;
+        background: #F4D5D3;
+        text-align: center;
+        left: -100%;
+        top: 80px;
+        width: 100%;
+        transition: all .5s;
+    }
+    .navbar ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .navbar ul li a{
+        color: #000;
+        font-size: 20px;
+    }
+    .navbar ul li a:hover{
+        color: #fff;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}
+@media (max-width: 600px) {
+    .contenedor{
+        display: inline-block;
+    }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{{title}}{%endblock%}</title>
+    <script src="https://kit.fontawesome.com/fec365c2f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-agendar-cita.css') }}">
+</head>
+<body>
+    {% extends 'base/base.html' %}
+    {%block content%}
+    <main class="contend-principal-form">
+        <div class="contend-form">
+            <div class="title-section">
+                <p>Agendar Cita</p>
+            </div>
+            <form action="#" class="form-agendar-cita" method="post">
+                <div class="txt-name">
+                    <i class="fa-solid fa-user icono-name"></i>
+                    <input type="text" class="name" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="txt-surname">
+                    <i class="fa-solid fa-user icono-surname"></i>
+                    <input type="text" class="surname" name="apellido" placeholder="Apellido" required>
+                </div>
+                <div class="txt-numberCell">
+                    <i class="fa-solid fa-phone icono-numCell"></i>
+                    <input type="text" class="numCell" name="numeroTel" placeholder="Numero de Telefono" required>
+                </div>
+                <div class="txt-servis">
+                    <i class="fa-solid fa-clipboard-list icono-service"></i>
+                    <input type="text" class="servis" name="servicio" placeholder="Servicio" required>
+                </div>
+                <div class="txt-colaboradora">
+                    <i class="fa-solid fa-user icono-colaboradora"></i>
+                    <input type="text" class="colaboradora" name="colaboradora" placeholder="Colaboradora" required>
+                </div>
+                <div class="btn-agendar">
+                    <input type="submit" class="btn-agendar-cita" value="Agendar">
+                </div>
+            </form>
+        </div>
+    </main>
+    {%endblock%}
+</body>
+</html>

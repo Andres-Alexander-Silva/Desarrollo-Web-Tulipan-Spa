@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{{title}}{%endblock%}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-servicios.css') }}">
+</head>
+<body>
+    {% extends 'base/base.html' %}
+    {%block content%}
+    <main class="principal-contend">
+        <div class="contend-global-servis">
+            <div class="title-servis">
+                <p>Servicios</p>
+            </div>
+            <div class="btn-servis">
+                <a href="/agregar-servicio" class="btn-agregar-servis">Agregar Servicio</a>
+                <a href="#" class="btn-eliminar-servis">Eliminar Servicio</a>
+            </div>
+            <div class="contend-servis">
+                <div class="servis">
+                    <div class="img-servis">
+                        <img src="{{ url_for('static', filename='img/foto5.jpg') }}"  alt="imagen">
+                    </div>
+                    <div class="info-servis">
+                        <div class="title-servis-contend">
+                            <p>Manicura y pedicura</p>
+                        </div>
+                        <div class="precio-servis">
+                            <p>Desde: $14.000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="servis">
+                    <div class="img-servis">
+                        <img src="{{ url_for('static', filename='img/foto3.jpg') }}"  alt="imagen">
+                    </div>
+                    <div class="info-servis">
+                        <div class="title-servis-contend">
+                            <p>Diseño de uñas</p>
+                        </div>
+                        <div class="precio-servis">
+                            <p>Desde: $14.000</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="servis">
+                    <div class="img-servis">
+                        <img src="{{ url_for('static', filename='img/foto3.jpg') }}"  alt="imagen">
+                    </div>
+                    <div class="info-servis">
+                        <div class="title-servis-contend">
+                            <p>Diseño de uñas</p>
+                        </div>
+                        <div class="precio-servis">
+                            <p>Desde: $14.000</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="servis">
+                    <div class="img-servis">
+                        <img src="{{ url_for('static', filename='img/foto3.jpg') }}"  alt="imagen">
+                    </div>
+                    <div class="info-servis">
+                        <div class="title-servis-contend">
+                            <p>Diseño de uñas</p>
+                        </div>
+                        <div class="precio-servis">
+                            <p>Desde: $14.000</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {%endblock%}
+</body>
+</html>
