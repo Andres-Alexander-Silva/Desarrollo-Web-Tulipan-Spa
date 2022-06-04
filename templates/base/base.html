@@ -19,11 +19,19 @@
                 <img src="{{ url_for('static', filename='img/logo-Tulipan.png') }}" alt="Tulipan Spa" class="logo">
             </a>
             <ul>
-                <li><a href="/inicio">Inicio</a></li>
-                <li><a href="/servicios">Servicios</a></li>
-                <li><a href="/promociones">Promociones</a></li>
-                <li><a href="/agendar-cita">Agendar Cita</a></li>
-                <li><a href="/iniciar-sesion">Iniciar Sesion</a></li>
+                {% if "usuario" in session %}
+                    <li><a href="/inicio">Inicio</a></li>
+                    <li><a href="/servicios">Servicios</a></li>
+                    <li><a href="/promociones">Promociones</a></li>
+                    <li><a href="/agendar-cita">Agendar Cita</a></li>
+                    <li><a href="/salir">Cerrar Sesion</a></li>
+                {% else %}
+                    <li><a href="/inicio">Inicio</a></li>
+                    <li><a href="/servicios">Servicios</a></li>
+                    <li><a href="/promociones">Promociones</a></li>
+                    <li><a href="/agendar-cita">Agendar Cita</a></li>
+                    <li><a href="/iniciar-sesion">Iniciar Sesion</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
@@ -48,8 +56,6 @@
                 <a href="https://www.instagram.com/tulipanspadeunas/?hl=es"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
-    </footer>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    
+    </footer>  
 </body>
 </html>

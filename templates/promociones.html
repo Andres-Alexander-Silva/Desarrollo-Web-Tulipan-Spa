@@ -14,28 +14,20 @@
             <div class="title-prom">
                 <p>Promociones y Ofertas</p>
             </div>
-            <div class="btns-prom">
-                <a href="/agregar-Promocion" class="btn-agregar-prom">Agregar Promoción</a>
-                <a href="#" class="btn-eliminar-prom">Eliminar Promoción</a>
-            </div>
+            {% if "usuario" in session %}
+                <div class="btns-prom">
+                    <a href="/agregar-Promocion" class="btn-agregar-prom">Agregar Promoción</a>
+                </div>
+            {% endif %}
             <div class="contend-img-promocion">
                 <div class="img-promocion">
                     <a href="#">
                         <img src="{{ url_for('static', filename='img/promocion1.jpg') }}" 
                         alt="promocion" class="foto-prom">
                     </a>
-                </div>
-                <div class="img-promocion">
-                    <a href="#">
-                        <img src="{{ url_for('static', filename='img/promocion2.jpg') }}" 
-                        alt="promocion" class="foto-prom">
-                    </a>
-                </div>
-                <div class="img-promocion">
-                    <a href="#">
-                        <img src="{{ url_for('static', filename='img/promocion2.jpg') }}" 
-                        alt="promocion" class="foto-prom">
-                    </a>
+                    {%if "usuario" in session %}
+                        <input type="button" value="Borrar">
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -43,3 +35,9 @@
     {%endblock%}
 </body>
 </html>
+<!-- <div class="img-promocion">
+    <a href="#">
+        <img src="{{ url_for('static', filename='img/promocion2.jpg') }}" 
+        alt="promocion" class="foto-prom">
+    </a>
+</div> -->

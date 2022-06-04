@@ -40,7 +40,7 @@
     padding: 10px;
     border-radius: 5px;
 }
-.eliminar-img{
+/* .eliminar-img{
     text-decoration: none;
     background: #DB4C48;
     color: #fff;
@@ -67,7 +67,7 @@
 .eliminar-img:hover{
     background: #ECA8A7;
     color: #000;
-}
+} */
 .agregar-img:hover{
     background: #ECA8A7;
     color: #000;

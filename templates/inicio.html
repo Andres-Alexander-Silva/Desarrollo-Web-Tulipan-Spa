@@ -14,33 +14,28 @@
         <div class="title">
             <p class="texto">Conoce Nuestros Diseños</p>
         </div>
-        <div class="buttom">
-            <a href="/agregar-imagen" class="agregar-img">Agregar imagen</a>
-            <a href="#" class="eliminar-img">Eliminar imagen</a>
-        </div>
-        <div class="seccion1">
-            <div class="contenedor-galeri">
-                <div class="contenedor-imgs">
-                    <img src="{{ url_for('static', filename='img/foto2.jpg') }}" alt="foto" class="imgs">
-                </div>
-                <div class="contenedor-imgs">
-                    <img src="{{ url_for('static', filename='img/foto1.jpg') }}" alt="foto" class="imgs">
-                </div>
-                <div class="contenedor-imgs">
-                    <img src="{{ url_for('static', filename='img/foto3.jpg') }}" alt="foto" class="imgs">
-                </div>
-                <div class="contenedor-imgs">
-                    <img src="{{ url_for('static', filename='img/foto5.jpg') }}" alt="foto" class="imgs">
+        {% if "usuario" in session %} 
+            <div class="buttom">
+                <a href="/agregar-imagen" class="agregar-img">Agregar imagen</a>
+            </div>
+        {% endif %}
+        {% for galeria in imagenes %}    
+            <div class="seccion1">
+                <div class="contenedor-galeri">
+                    <div class="contenedor-imgs">
+                        <img src="static/galeria/{{galeria[1]}}" alt="foto" class="imgs">
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
         <div class="title2">
             <p class="texto">Promociones y Noticias</p>
         </div>
+        {% if "usuario" in session %}
         <div class="buttom">
             <a href="/agregar-noticia" class="agregar-prom-noti">Agregar Noticias</a>
-            <a href="#" class="eliminar-prom-noti">Eliminar Noticias</a>
         </div>
+        {% endif %}
         <div class="seccion2">
             <div class="contenedor-prom">
                 <div class="contenedor-imgs-prom">
@@ -58,3 +53,12 @@
     {%endblock%}
 </body>
 </html>
+<!-- <div class="contenedor-imgs">
+    <img src="{{ url_for('static', filename='img/foto1.jpg') }}" alt="foto" class="imgs">
+</div>
+<div class="contenedor-imgs">
+    <img src="{{ url_for('static', filename='img/foto3.jpg') }}" alt="foto" class="imgs">
+</div>
+<div class="contenedor-imgs">
+    <img src="{{ url_for('static', filename='img/foto5.jpg') }}" alt="foto" class="imgs">
+</div> -->

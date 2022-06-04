@@ -43,7 +43,7 @@
     background: #DB4C48;
     padding: 10px;
 }
-.btn-eliminar-servis{
+/* .btn-eliminar-servis{
     text-decoration: none;
     margin: 0 10px;
     font-size: 14px;
@@ -52,15 +52,15 @@
     color: #fff;
     background: #DB4C48;
     padding: 10px;
-}
+} */
 .btn-agregar-servis:hover{
     background: #ECA8A7;
     color: #000;
 }
-.btn-eliminar-servis:hover{
+/* .btn-eliminar-servis:hover{
     background: #ECA8A7;
     color: #000;
-}
+} */
 .contend-servis{
     display: flex;
     justify-content: center;

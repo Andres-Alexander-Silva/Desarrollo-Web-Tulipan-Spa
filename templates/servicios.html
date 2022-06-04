@@ -14,10 +14,11 @@
             <div class="title-servis">
                 <p>Servicios</p>
             </div>
-            <div class="btn-servis">
-                <a href="/agregar-servicio" class="btn-agregar-servis">Agregar Servicio</a>
-                <a href="#" class="btn-eliminar-servis">Eliminar Servicio</a>
-            </div>
+            {% if "usuario" in session %}
+                <div class="btn-servis">
+                    <a href="/agregar-servicio" class="btn-agregar-servis">Agregar Servicio</a>
+                </div>
+            {% endif %}
             <div class="contend-servis">
                 <div class="servis">
                     <div class="img-servis">
@@ -58,7 +59,7 @@
                        </div>
                     </div>
                 </div>
-                <div class="servis">
+                <!-- <div class="servis">
                     <div class="img-servis">
                         <img src="{{ url_for('static', filename='img/foto3.jpg') }}"  alt="imagen">
                     </div>
@@ -70,7 +71,7 @@
                             <p>Desde: $14.000</p>
                        </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
