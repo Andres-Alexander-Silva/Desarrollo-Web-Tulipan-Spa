@@ -23,7 +23,7 @@
             <div class="seccion1">
                 <div class="contenedor-galeri">
                     <div class="contenedor-imgs">
-                        <img src="galeria/{{galeria[1]}}" alt="foto" class="imgs">
+                        <img src="/website-TulipanSpa/static/galeria/{{galeria[1]}}" alt="foto" class="imgs">
                     </div>
                 </div>
             </div>
@@ -36,29 +36,16 @@
             <a href="/agregar-noticia" class="agregar-prom-noti">Agregar Noticias</a>
         </div>
         {% endif %}
-        <div class="seccion2">
-            <div class="contenedor-prom">
-                <div class="contenedor-imgs-prom">
-                    <img src="{{ url_for('static', filename='img/promocion1.jpg') }}" alt="promocion" class="imgs2">
-                </div>
-                <div class="contenedor-imgs-prom">
-                    <img src="{{ url_for('static', filename='img/noticia1.jpg') }}" alt="promocion" class="imgs2">
-                </div>
-                <div class="contenedor-imgs-prom">
-                    <img src="{{ url_for('static', filename='img/noticia2.jpg') }}" alt="promocion" class="imgs2">
+        {% for noti in noticias %}    
+            <div class="seccion2">
+                <div class="contenedor-prom">
+                    <div class="contenedor-imgs-prom">
+                        <img src="{{ url_for('static', filename='img/promocion1.jpg') }}" alt="promocion" class="imgs2">
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </main>
     {%endblock%}
 </body>
 </html>
-<!-- <div class="contenedor-imgs">
-    <img src="{{ url_for('static', filename='img/foto1.jpg') }}" alt="foto" class="imgs">
-</div>
-<div class="contenedor-imgs">
-    <img src="{{ url_for('static', filename='img/foto3.jpg') }}" alt="foto" class="imgs">
-</div>
-<div class="contenedor-imgs">
-    <img src="{{ url_for('static', filename='img/foto5.jpg') }}" alt="foto" class="imgs">
-</div> -->
