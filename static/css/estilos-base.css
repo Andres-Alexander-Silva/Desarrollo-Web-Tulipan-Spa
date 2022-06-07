@@ -99,7 +99,7 @@ body {
     }
 }
 /* Estilos responsive desing movil */
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
     .checkbtn{
         display: block;
     }

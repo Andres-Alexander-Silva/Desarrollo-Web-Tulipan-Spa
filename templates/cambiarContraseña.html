@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{{title}}{%endblock%}</title>
+    <script src="https://kit.fontawesome.com/fec365c2f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-cambio-contraseña.css') }}">
+</head>
+<body>
+    <main>
+        <div class="contenedor-principal">
+            <div class="contenedor-form">
+                <p class="title">Cambiar Contraseña</p>
+                <form action="/cambiar-contraseña" class="form-new-pass" method="post">
+                    <div class="usuario">
+                        <i class="fa-solid fa-user icono-user"></i>
+                        <input type="text" class="user" name="usuario" placeholder="Usuario" required>
+                    </div>
+                    <div class="contrasegna-new">
+                        <i class="fa-solid fa-key icono-pass"></i>
+                        <input type="password" class="pass-new" name="contraseña-new" placeholder="Contraseña" required>
+                    </div>
+                    <div class="login">
+                        <a href="/iniciar-sesion">Iniciar Sesion</a>
+                    </div>
+                    <div class="btn">
+                        <input type="submit" value="actualizar contraseña">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{{title}}{%endblock%}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-listar-cita.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="title">
+        <p class="texto">Listado de citas agendadas</p>
+    </div>
+    {% if "usuario" in session %}
+        <div class="buttom">
+            <a href="/agendar" class="agregar-cita">Agregar Cita</a>
+        </div>
+    {% endif %}
+    
+    {% endblock%}
+</body>
+</html>

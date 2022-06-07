@@ -218,8 +218,8 @@ def cambio_contraseña():
     titulo = "Cambiar Contraseña"
     
     if request.method == "POST":
-        _usuario = request.form[""]
-        _newPassword = request.form[""]
+        _usuario = request.form["usuario"]
+        _newPassword = request.form["contraseña-new"]
         _newPasswordEncriptada = generate_password_hash(_newPassword)
         
         sql = "UPDATE usuarios SET contraseña = %s WHERE usuario = %s"
@@ -227,8 +227,9 @@ def cambio_contraseña():
         conection = mysql.connect()
         cursor = conection.cursor()
         cursor.execute(sql,datos)
+        conection.commit()
         
-        return redirect(url_for("inicio_sesion"))
+        #return redirect(url_for("inicio_sesion"))
         
     return render_template("cambiarContraseña.html", title=titulo)
 
