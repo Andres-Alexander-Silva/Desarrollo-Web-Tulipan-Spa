@@ -20,58 +20,24 @@
                 </div>
             {% endif %}
             <div class="contend-servis">
-                <div class="servis">
-                    <div class="img-servis">
-                        <img src="{{ url_for('static', filename='img/foto5.jpg') }}"  alt="imagen">
-                    </div>
-                    <div class="info-servis">
-                        <div class="title-servis-contend">
-                            <p>Manicura y pedicura</p>
+                {% for servi in servicios %}    
+                    <div class="servis">
+                        <div class="img-servis">
+                             <img src="static/servicios/{{servi[3]}}" class="img-service" alt="imagen">
                         </div>
-                        <div class="precio-servis">
-                            <p>Desde: $14.000</p>
+                        <div class="info-servis">
+                            <div class="title-servis-contend">
+                                <p>{{servi[1]}}</p>
+                            </div>
+                            <div class="precio-servis">
+                                <p>{{servi[2]}}</p>
+                            </div>
                         </div>
+                        {% if "usuario" in session %}                            
+                            <a href="/borrar-servicio/{{servi[0]}}" class="borrar-servi">Borrar</a>
+                        {% endif %}
                     </div>
-                </div>
-                <div class="servis">
-                    <div class="img-servis">
-                        <img src="{{ url_for('static', filename='img/foto3.jpg') }}"  alt="imagen">
-                    </div>
-                    <div class="info-servis">
-                        <div class="title-servis-contend">
-                            <p>Diseño de uñas</p>
-                        </div>
-                        <div class="precio-servis">
-                            <p>Desde: $14.000</p>
-                       </div>
-                    </div>
-                </div>
-                <div class="servis">
-                    <div class="img-servis">
-                        <img src="{{ url_for('static', filename='img/foto3.jpg') }}"  alt="imagen">
-                    </div>
-                    <div class="info-servis">
-                        <div class="title-servis-contend">
-                            <p>Diseño de uñas</p>
-                        </div>
-                        <div class="precio-servis">
-                            <p>Desde: $14.000</p>
-                       </div>
-                    </div>
-                </div>
-                <!-- <div class="servis">
-                    <div class="img-servis">
-                        <img src="{{ url_for('static', filename='img/foto3.jpg') }}"  alt="imagen">
-                    </div>
-                    <div class="info-servis">
-                        <div class="title-servis-contend">
-                            <p>Diseño de uñas</p>
-                        </div>
-                        <div class="precio-servis">
-                            <p>Desde: $14.000</p>
-                       </div>
-                    </div>
-                </div> -->
+                {% endfor %}
             </div>
         </div>
     </main>

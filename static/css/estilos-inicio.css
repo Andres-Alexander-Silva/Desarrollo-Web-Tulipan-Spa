@@ -128,6 +128,28 @@
     object-fit: contain;
     border-radius: 10px;
 }
+
+.borrar-img{
+    text-decoration: none;
+    color: #fff;
+    background: #E58183;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.borrar-noti{
+    text-decoration: none;
+    color: #fff;
+    background: #E58183;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
 @media (max-width: 800px){
     .seccion1{
         justify-content: center;

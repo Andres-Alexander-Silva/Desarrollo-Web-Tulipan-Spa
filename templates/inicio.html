@@ -19,15 +19,18 @@
                 <a href="/agregar-imagen" class="agregar-img">Agregar imagen</a>
             </div>
         {% endif %}
-        {% for galeria in imagenes %}    
-            <div class="seccion1">
-                <div class="contenedor-galeri">
-                    <div class="contenedor-imgs">
-                        <img src="/website-TulipanSpa/static/galeria/{{galeria[1]}}" alt="foto" class="imgs">
-                    </div>
+        <div class="seccion1">
+            <div class="contenedor-galeri">
+                    {% for galeria in imagenes %}    
+                        <div class="contenedor-imgs">
+                            <img src="static/galeria/{{galeria[1]}}" alt="foto" class="imgs">
+                        </div>
+                        {% if "usuario" in session %}
+                            <a href="/borrar-img-galeria/{{galeria[0]}}" class="borrar-img">Borrar</a>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-        {% endfor %}
         <div class="title2">
             <p class="texto">Promociones y Noticias</p>
         </div>
@@ -36,15 +39,18 @@
             <a href="/agregar-noticia" class="agregar-prom-noti">Agregar Noticias</a>
         </div>
         {% endif %}
-        {% for noti in noticias %}    
-            <div class="seccion2">
-                <div class="contenedor-prom">
-                    <div class="contenedor-imgs-prom">
-                        <img src="{{ url_for('static', filename='img/promocion1.jpg') }}" alt="promocion" class="imgs2">
-                    </div>
+        <div class="seccion2">
+            <div class="contenedor-prom">
+                    {% for noti in noticias %}    
+                        <div class="contenedor-imgs-prom">
+                            <img src="static/noticias/{{noti[1]}}" alt="promocion" class="imgs2">
+                        </div>
+                        {% if "usuario" in session %}                            
+                            <a href="/borrar-img-noticia/{{noti[0]}}" class="borrar-noti">Borrar</a>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-        {% endfor %}
     </main>
     {%endblock%}
 </body>

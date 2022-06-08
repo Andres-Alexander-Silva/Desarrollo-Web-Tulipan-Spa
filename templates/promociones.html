@@ -19,17 +19,18 @@
                     <a href="/agregar-Promocion" class="btn-agregar-prom">Agregar Promoción</a>
                 </div>
             {% endif %}
-            <div class="contend-img-promocion">
-                <div class="img-promocion">
-                    <a href="#">
-                        <img src="{{ url_for('static', filename='img/promocion1.jpg') }}" 
-                        alt="promocion" class="foto-prom">
-                    </a>
-                    {%if "usuario" in session %}
-                        <input type="button" value="Borrar">
-                    {% endif %}
+            {% for prom in promociones %}    
+                <div class="contend-img-promocion">
+                    <div class="img-promocion">
+                        <a href="#">
+                            <img src="static/promociones/{{prom[1]}}" alt="promocion" class="foto-prom">
+                        </a>
+                        {% if "usuario" in session %}                            
+                            <a href="/borrar-img-promocion/{{prom[0]}}" class="borrar-prom">Borrar</a>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </main>
     {%endblock%}

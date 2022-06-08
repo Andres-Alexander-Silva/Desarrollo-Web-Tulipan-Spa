@@ -23,12 +23,31 @@ app.config['MYSQL_DATABASE_DB'] = 'tulipanspa'
 
 mysql.init_app(app)
 
-CARPETA = os.path.join('website-TulipanSpa/static/galeria')
-app.config['CARPETA'] = CARPETA
+GALERIA = os.path.join('static/galeria')
+NOTICIA = os.path.join('static/noticias')
+PROMOCION = os.path.join('static/promociones')
+SERVICIO = os.path.join('static/servicios')
 
-@app.route("/website-TulipanSpa/static/galeria/<nombreFoto>")
+app.config['GALERIA'] = GALERIA
+app.config['NOTICIA'] = NOTICIA
+app.config['PROMOCION'] = PROMOCION
+app.config['SERVICIO'] = SERVICIO
+
+@app.route("/static/galeria/<nombreFoto>")
 def galeria(nombreFoto):
-    return send_from_directory(app.config['CARPETA'],nombreFoto)
+    return send_from_directory(app.config['GALERIA'],nombreFoto)
+
+@app.route('/static/noticias/<nombreFoto>')
+def noticia(nombreFoto):
+    return send_from_directory(app.config['NOTICIA'],nombreFoto)
+
+@app.route('/static/promociones/<nombreFoto>')
+def promocion(nombreFoto):
+    return send_from_directory(app.config['PROMOCION'],nombreFoto)
+
+@app.route('/static/servicios/<nombreFoto>')
+def servicio(nombreFoto):
+    return send_from_directory(app.config['SERVICIO'],nombreFoto)
 
 @app.route("/")
 @app.route("/inicio")
@@ -72,6 +91,11 @@ def promociones():
     promociones = cursor.fetchall()
     
     return render_template("promociones.html", title=titulo, promociones=promociones)
+
+@app.route('/lista-agendados')
+def lista_agendados():
+    titulo = "Listado de Agendados"
+    return render_template("listarCitas.html",title=titulo)
 
 @app.route("/agregar-imagen", methods=["GET","POST"])
 def agregar_img():
@@ -170,6 +194,62 @@ def agregar_servicio():
             return redirect(url_for("servicios")) 
     
     return render_template("agregarServicio.html", title=titulo)
+
+@app.route('/borrar-img-galeria/<int:id>')
+def borrar_img_galeria(id):
+    conection = mysql.connect()
+    cursor = conection.cursor()
+    
+    cursor.execute("SELECT foto FROM galeria WHERE id=%s",(id))
+    fila = cursor.fetchall()
+    os.remove(os.path.join(app.config['GALERIA'],fila[0][0]))
+              
+    cursor.execute("DELETE FROM galeria WHERE id=%s",(id))
+    conection.commit()
+    
+    return redirect(url_for("inicio"))          
+
+@app.route('/borrar-img-noticia/<int:id>')
+def borrar_img_noticia(id):
+    conection = mysql.connect()
+    cursor = conection.cursor()
+    
+    cursor.execute("SELECT imagen FROM noticiaS WHERE id=%s",(id))
+    fila = cursor.fetchall()
+    os.remove(os.path.join(app.config['NOTICIA'],fila[0][0]))
+              
+    cursor.execute("DELETE FROM noticias WHERE id=%s",(id))
+    conection.commit()
+    
+    return redirect(url_for("inicio"))
+
+@app.route('/borrar-img-promocion/<int:id>')
+def borrar_img_promocion(id):
+    conection = mysql.connect()
+    cursor = conection.cursor()
+    
+    cursor.execute("SELECT imagen FROM promociones WHERE id=%s",(id))
+    fila = cursor.fetchall()
+    os.remove(os.path.join(app.config['PROMOCION'],fila[0][0]))
+              
+    cursor.execute("DELETE FROM promociones WHERE id=%s",(id))
+    conection.commit()
+    
+    return redirect(url_for("promociones"))
+
+@app.route('/borrar-servicio/<int:id>')
+def borrar_servicio(id):
+    conection = mysql.connect()
+    cursor = conection.cursor()
+    
+    cursor.execute("SELECT imagen FROM servicios WHERE id=%s",(id))
+    fila = cursor.fetchall()
+    os.remove(os.path.join(app.config['SERVICIO'],fila[0][0]))
+              
+    cursor.execute("DELETE FROM servicios WHERE id=%s",(id))
+    conection.commit()
+    
+    return redirect(url_for("servicios"))  
 
 @app.route("/agendar-cita", methods=["GET","POST"])
 def agendar_cita():
