@@ -40,34 +40,6 @@
     padding: 10px;
     border-radius: 5px;
 }
-/* .eliminar-img{
-    text-decoration: none;
-    background: #DB4C48;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 0 10px;
-}
-.eliminar-prom-noti {
-    text-decoration: none;
-    background: #DB4C48;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 0 10px;
-}
-.eliminar-prom-noti:hover {
-    background: #ECA8A7;
-    color: #000;
-}
-.eliminar-img:hover{
-    background: #ECA8A7;
-    color: #000;
-} */
 .agregar-img:hover{
     background: #ECA8A7;
     color: #000;

@@ -95,7 +95,14 @@ def promociones():
 @app.route('/lista-agendados')
 def lista_agendados():
     titulo = "Listado de Agendados"
-    return render_template("listarCitas.html",title=titulo)
+    
+    sql = "SELECT * FROM citas"
+    conection = mysql.connect()
+    cursor = conection.cursor()
+    cursor.execute(sql)
+    citas = cursor.fetchall()
+    
+    return render_template("listarCitas.html",title=titulo, citas=citas)
 
 @app.route("/agregar-imagen", methods=["GET","POST"])
 def agregar_img():
@@ -195,6 +202,14 @@ def agregar_servicio():
     
     return render_template("agregarServicio.html", title=titulo)
 
+@app.route('/elimiar/<int:id>')
+def eliminar(id):
+    conection = mysql.connect()
+    cursor = conection.cursor()
+    cursor.execute("DELETE FROM citas WHERE id=%s",(id))
+    conection.commit()
+    return redirect(url_for("lista_agendados"))
+
 @app.route('/borrar-img-galeria/<int:id>')
 def borrar_img_galeria(id):
     conection = mysql.connect()
@@ -249,7 +264,28 @@ def borrar_servicio(id):
     cursor.execute("DELETE FROM servicios WHERE id=%s",(id))
     conection.commit()
     
-    return redirect(url_for("servicios"))  
+    return redirect(url_for("servicios")) 
+
+@app.route('/agendar', methods=['GET','POST'])
+def agendar():
+    titulo = "Agendar"
+    
+    if request.method == "POST":
+        _nombre = request.form['nombre']
+        _numCell = request.form['num-cell']
+        _servicio = request.form['servicio']
+        _colaborado = request.form['colaboradora']
+        _fecha = request.form['fecha']
+        
+        sql = """INSERT INTO citas (`id`, `nombre`, `telefono`, `servicio`, `colaboradora`, `fecha`) 
+        VALUES (NULL, %s, %s, %s, %s, %s)"""
+        datos = (_nombre, _numCell, _servicio, _colaborado, _fecha)
+        conection = mysql.connect()
+        cursor = conection.cursor()
+        cursor.execute(sql,datos)
+        conection.commit()
+    
+    return render_template("agendar.html",title=titulo) 
 
 @app.route("/agendar-cita", methods=["GET","POST"])
 def agendar_cita():

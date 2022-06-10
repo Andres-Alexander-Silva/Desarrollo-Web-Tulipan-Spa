@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fec365c2f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-agendar.css') }}"> 
+    <title>{% block title %}{{titulo}}{%endblock%}</title>
+</head>
+<body>
+    <main class="content">
+        <div class="content-principal">
+            <div class="titutlo">
+                <p>Agendar</p>
+                <form action="/agendar" class="form-agendar" method="post">
+                    <div class="txt-nombre">
+                        <i class="fa-solid fa-user icono-name"></i>
+                        <input type="text" name="nombre" class="name" placeholder="Nombre y Apellido" required>
+                    </div>
+                    <div class="txt-num-cell">
+                        <i class="fa-solid fa-phone icono-numCell"></i>
+                        <input type="text" name="num-cell" class="num-cll" placeholder="Num Celular" required>
+                    </div>
+                    <div class="txt-servicio">
+                        <i class="fa-solid fa-clipboard-list icono-service"></i>
+                        <input type="text" name="servicio" class="servio" placeholder="Servicio" required>
+                    </div>
+                    <div class="txt-colaboradora">
+                        <i class="fa-solid fa-user icono-colaboradora"></i>
+                        <input type="text" name="colaboradora" placeholder="Colaboradora" class="colaboradora" required>
+                    </div>
+                    <div class="txt-fecha">
+                        <i class="fa-solid fa-calendar"></i>
+                        <input type="text" name="fecha" placeholder="Fecha de la cita" class="fecha" required>
+                    </div>
+                    <div class="buttom-submit">
+                        <input type="submit" class="btn-enviar" value="Agregar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

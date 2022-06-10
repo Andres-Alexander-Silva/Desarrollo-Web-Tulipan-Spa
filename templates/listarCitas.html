@@ -4,20 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{%block title%}{{title}}{%endblock%}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-listar-cita.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos-litar-cita.css') }}">
 </head>
 <body>
     {% extends 'base/base.html' %}
     {% block content %}
-    <div class="title">
-        <p class="texto">Listado de citas agendadas</p>
-    </div>
-    {% if "usuario" in session %}
-        <div class="buttom">
-            <a href="/agendar" class="agregar-cita">Agregar Cita</a>
+    <main class="main-content">
+        <div class="principal-content">
+            <div class="title">
+                <p class="texto">Listado de citas agendadas</p>
+            </div>
+            {% if "usuario" in session %}
+                <div class="buttom">
+                    <a href="/agendar" class="agregar-cita">Agregar Cita</a>
+                </div>
+            {% endif %}
+            <table class="lista-agendados">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Num Celular</th>
+                        <th>Servicio</th>
+                        <th>Colaboradora</th>
+                        <th>Fecha (Dia / Hora)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cita in citas %}    
+                        <tr>
+                            <td>{{cita[1]}}</td>
+                            <td>{{cita[2]}}</td>
+                            <td>{{cita[3]}}</td>
+                            <td>{{cita[4]}}</td>
+                            <td>{{cita[5]}}</td>
+                            <td>
+                                <a href="#"> Editar </a>|
+                                <a href="/elimiar/{{cita[0]}}"> Eliminar </a> 
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-    {% endif %}
-    
+    </main>
     {% endblock%}
 </body>
 </html>
