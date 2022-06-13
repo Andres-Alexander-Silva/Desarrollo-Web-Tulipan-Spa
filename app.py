@@ -202,6 +202,40 @@ def agregar_servicio():
     
     return render_template("agregarServicio.html", title=titulo)
 
+@app.route('/editar/<int:id>', methods=['GET','POST'])
+def editar(id):
+    titulo = "Editar Citas"
+    
+    conection = mysql.connect()
+    cursor = conection.cursor()
+    sql = "SELECT * FROM citas WHERE id=%s"
+    datos = (id)
+    cursor.execute(sql,id)
+    citas = cursor.fetchall()
+    conection.commit()
+    
+    return render_template("editarCitas.html", title=titulo, citas=citas)
+
+@app.route('/actualizar', methods=['GET','POST'])
+def actualizar():
+    if request.method == "POST":
+        _nombre = request.form['nombre']
+        _numCell = request.form['numCell']
+        _servicio = request.form['servicio']
+        _colaborado = request.form['colaboradora']
+        _fecha = request.form['fecha']
+        _id = request.form['id']
+        
+        sql = "UPDATE citas SET nombre=%s, telefono=%s, servicio=%s, colaboradora=%s, fecha=%s WHERE id=%s"
+        datos = (_nombre, _numCell, _servicio, _colaborado, _fecha, _id)
+        
+        conection = mysql.connect()
+        cursor = conection.cursor()
+        cursor.execute(sql,datos)
+        conection.commit()
+        
+        return redirect(url_for("lista_agendados"))
+
 @app.route('/elimiar/<int:id>')
 def eliminar(id):
     conection = mysql.connect()
@@ -269,7 +303,10 @@ def borrar_servicio(id):
 @app.route('/agendar', methods=['GET','POST'])
 def agendar():
     titulo = "Agendar"
-    
+    return render_template("agendar.html",title=titulo)   
+
+@app.route('/cita', methods=['GET', 'POST'])
+def cita():
     if request.method == "POST":
         _nombre = request.form['nombre']
         _numCell = request.form['num-cell']
@@ -284,8 +321,8 @@ def agendar():
         cursor = conection.cursor()
         cursor.execute(sql,datos)
         conection.commit()
-    
-    return render_template("agendar.html",title=titulo) 
+        
+        return redirect(url_for("lista_agendados"))
 
 @app.route("/agendar-cita", methods=["GET","POST"])
 def agendar_cita():
@@ -344,8 +381,6 @@ def cambio_contraseña():
         cursor = conection.cursor()
         cursor.execute(sql,datos)
         conection.commit()
-        
-        #return redirect(url_for("inicio_sesion"))
         
     return render_template("cambiarContraseña.html", title=titulo)
 

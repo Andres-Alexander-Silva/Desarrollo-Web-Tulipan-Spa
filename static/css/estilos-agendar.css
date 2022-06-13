@@ -1,0 +1,126 @@
+/* Fuente personalizada para la pagina */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Estilos del main o contenedor principal */
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("../img/Fondo-Tulipnes.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.content-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo p{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding: 25px;
+}
+.form-agendar{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: #F4D5D3;
+    width: 400px;
+    padding: 25px 20px;
+    border-radius: 5px;
+}
+.txt-nombre, .txt-num-cell, .txt-servicio, .txt-colaboradora,
+ .txt-fecha{
+    height: 45px;
+    margin-bottom: 20px;
+}
+.icono-numCell{
+    font-size: 20px;
+    background: #DB4C48;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+.icono-name, .icono-service, 
+.icono-colaboradora, .icono-fecha{
+    font-size: 25px;
+    background: #DB4C48;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+.name, .num-cell, .servicio, .colaboradora, .fecha{
+    width: 80%;
+    height: 100%;
+    font-size: 20px;
+    outline: none;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 2px solid #DB4C48;
+    background: #fff;
+}
+.buttom-submit{
+    justify-content: center;
+    align-items: center;
+}
+.btn-enviar{
+    background: #E58183;
+    font-size: 20px;
+    padding: 5px 35px;
+    font-weight: 500;
+    outline: none;
+    border: 2px solid #E58183;
+    border-radius: 5px;
+    color: #000;
+    margin-top: 10px; 
+}
+@media (max-width: 800px){
+    .content{
+        padding: 20px;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        background-image: url("../img/fondo-responsive.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .content-principal{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+    }
+    .titulo p{
+        font-size: 25px;
+    }
+
+    .txt-nombre, .txt-num-cell, .txt-servicio, .txt-colaboradora,
+    .txt-fecha{
+        height: 40px;
+    }
+    .icono-name, .icono-numCell, .icono-fecha,
+    .icono-service, .icono-colaboradora{
+        font-size: 20px;
+    }
+    .name, .num-cell, .servicio, .colaboradora, .fecha{
+        font-size: 15px;
+    }
+    .btn-enviar{
+        font-size: 15px;
+    }
+}
