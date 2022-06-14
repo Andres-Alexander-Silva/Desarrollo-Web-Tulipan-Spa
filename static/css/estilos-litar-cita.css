@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 .main-content{
     padding: 20px;
     min-height: 100vh;
@@ -8,4 +9,108 @@
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+}
+.principal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title p{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding: 25px;
+}
+.buttom{
+    display: flex;
+    margin: 0 0 20px 0;
+    justify-content: center;
+}
+.agregar-cita{
+    text-decoration: none;
+    background: #DB4C48;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+.agregar-cita:hover{
+    background: #ECA8A7;
+    color: #000;
+}
+.lista-agendados{
+    margin-top: 15px;
+    background: #ECA8A7;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+.lista-agendados th,td{
+    padding: 10px;
+}
+.lista-agendados td{
+    font-weight: 600;
+}
+.lista-agendados thead{
+    background-color: #E58183;
+    color: #fff;
+    border-bottom: solid 5px #DB4C48;
+}
+.lista-agendados tr:nth-child(even){
+    background: #E58183;
+}
+.editar, .eliminar{
+    text-decoration: none;
+    color: #fff;
+    background: #D93030;
+    padding: 5px;
+    border-radius: 5px;
+}
+.editar:hover, .eliminar:hover{
+    background: #F25C5C;
+    color: #000;
+}
+@media (max-width: 800px){
+    .main-content{
+        padding: 20px;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        background-image: url("../img/fondo-responsive.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    .principal-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .title p{
+        font-size: 25px;
+    }
+    .lista-agendados{
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+    .lista-agendados td, th{
+        font-size: 14px;
+    }
+    .editar, .eliminar{
+        font-size: 14px;
+        background: none;
+    }
+    .editar:hover, .eliminar:hover{
+        background: none;
+    }
 }
