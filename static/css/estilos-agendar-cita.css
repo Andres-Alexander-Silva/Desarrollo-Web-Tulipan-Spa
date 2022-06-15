@@ -59,6 +59,10 @@
     height: 45px;
     margin-bottom: 20px;
 }
+.txt-fecha{
+    height: 45px;
+    margin-bottom: 20px;
+}
 .icono-name{
     font-size: 25px;
     background: #DB4C48;
@@ -100,6 +104,16 @@
     justify-content: center;
 }
 .icono-colaboradora{
+    font-size: 25px;
+    background: #DB4C48;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icono-fecha{
     font-size: 25px;
     background: #DB4C48;
     padding: 10px;
@@ -159,6 +173,16 @@
     border: 2px solid #DB4C48;
     background: #fff;
 }
+.fecha{
+    width: 80%;
+    height: 100%;
+    font-size: 20px;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 5px;
+    border: 2px solid #DB4C48;
+    background: #fff;
+}
 .btn-agendar{
     justify-content: center;
     text-align: center;
@@ -205,14 +229,14 @@
         margin: 20px 0;
     }
     .txt-name, .txt-surname, .txt-numberCell,
-    .txt-servis, .txt-colaboradora {
+    .txt-servis, .txt-colaboradora, .txt-fecha{
         height: 40px;
     } 
     .icono-name, .icono-surname, .icono-numCell,
-    .icono-service, .icono-colaboradora{
+    .icono-service, .icono-colaboradora, .icono-fecha{
         font-size: 20px;
     }
-    .name, .surname, .numCell, .servis, .colaboradora{
+    .name, .surname, .numCell, .servis, .colaboradora, .fecha{
         font-size: 15px;
     }
     .btn-agendar-cita{

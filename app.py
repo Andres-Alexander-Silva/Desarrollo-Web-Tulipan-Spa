@@ -9,17 +9,18 @@ from flask import send_from_directory
 from flaskext.mysql import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
+from decouple import config
 import webbrowser as web
 import os
 
 app = Flask(__name__)
 mysql = MySQL()
 
-app.config['SECRET_KEY'] = "myScretKeyTulipanSpaAndresSilva"
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'tulipanspa'
+app.config['SECRET_KEY'] = config('SECRET_KEY')
+app.config['MYSQL_DATABASE_HOST'] = config('MYSQL_DATABASE_HOST')
+app.config['MYSQL_DATABASE_USER'] = config('MYSQL_DATABASE_USER')
+app.config['MYSQL_DATABASE_PASSWORD'] = config('MYSQL_DATABASE_PASSWORD')
+app.config['MYSQL_DATABASE_DB'] = config('MYSQL_DATABASE_DB')
 
 mysql.init_app(app)
 
@@ -334,10 +335,11 @@ def agendar_cita():
         _telefono = request.form["numeroTel"]
         _servicio = request.form["servicio"]
         _colaboradora = request.form["colaboradora"]
+        _fecha = request.form["fecha"]
         
         if _nombre != "" and _apellido != "" and _telefono != "" and _servicio and _colaboradora != "":
-            _mensaje = _nombre+" "+_apellido+"\n"+_telefono+"\n"+_servicio+"\n"+_colaboradora
-            url = "https://api.whatsapp.com/send?phone=573016570792&text="+_mensaje
+            _mensaje = _nombre+" "+_apellido+" "+_telefono+" "+_servicio+" "+_colaboradora+" "+_fecha
+            url = "https://api.whatsapp.com/send?phone=573203410602&text="+_mensaje
             web.open_new(url)
         
     return render_template("agendarCita.html", title=titulo)
@@ -390,4 +392,4 @@ def salir():
     return redirect(url_for("inicio"))
 
 if __name__ == "__main__":
-    app.run(debug=True,port=5500)
+    app.run(debug=True,port=config('PORT'))
