@@ -34,27 +34,23 @@ app.config['NOTICIA'] = NOTICIA
 app.config['PROMOCION'] = PROMOCION
 app.config['SERVICIO'] = SERVICIO
 
-@app.route("/static/galeria/<nombreFoto>")
+@app.route("/tulipan/static/galeria/<nombreFoto>")
 def galeria(nombreFoto):
     return send_from_directory(app.config['GALERIA'],nombreFoto)
 
-@app.route('/static/noticias/<nombreFoto>')
+@app.route('/tulipan/static/noticias/<nombreFoto>')
 def noticia(nombreFoto):
     return send_from_directory(app.config['NOTICIA'],nombreFoto)
 
-@app.route('/static/promociones/<nombreFoto>')
+@app.route('/tulipan/static/promociones/<nombreFoto>')
 def promocion(nombreFoto):
     return send_from_directory(app.config['PROMOCION'],nombreFoto)
 
-@app.route('/static/servicios/<nombreFoto>')
+@app.route('/tulipan/static/servicios/<nombreFoto>')
 def servicio(nombreFoto):
     return send_from_directory(app.config['SERVICIO'],nombreFoto)
 
-@app.route("/")
-def index():
-    return render_template('base/base.html')
-
-@app.route("/inicio")
+@app.route("/tulipan/inicio")
 def inicio():
     titulo = "Tulipan Spa"
     
@@ -72,7 +68,7 @@ def inicio():
     
     return render_template("inicio.html", title=titulo, imagenes=imagenes, noticias=noticias)
 
-@app.route("/servicios")
+@app.route("/tulipan/servicios")
 def servicios():
     titulo = "Servicios"
     
@@ -84,7 +80,7 @@ def servicios():
     
     return render_template("servicios.html", title=titulo, servicios=servicios)
 
-@app.route("/promociones", methods=["GET","POST"])
+@app.route("/tulipan/promociones", methods=["GET","POST"])
 def promociones():
     titulo = "Promociones"
     
@@ -96,7 +92,7 @@ def promociones():
     
     return render_template("promociones.html", title=titulo, promociones=promociones)
 
-@app.route('/lista-agendados')
+@app.route('/tulipan/lista-agendados')
 def lista_agendados():
     titulo = "Listado de Agendados"
     
@@ -108,7 +104,7 @@ def lista_agendados():
     
     return render_template("listarCitas.html",title=titulo, citas=citas)
 
-@app.route("/agregar-imagen", methods=["GET","POST"])
+@app.route("/tulipan/agregar-imagen", methods=["GET","POST"])
 def agregar_img():
     titulo = "Agregar Imagen"
     
@@ -132,7 +128,7 @@ def agregar_img():
         
     return render_template("agregarImagen.html", title=titulo)
 
-@app.route("/agregar-noticia", methods=["GET","POST"])
+@app.route("/tulipan/agregar-noticia", methods=["GET","POST"])
 def agregar_noticia():
     titulo = "Agregar Noticia"
     
@@ -156,7 +152,7 @@ def agregar_noticia():
             
     return render_template("agregarNoticia.html", title=titulo)
 
-@app.route("/agregar-Promocion", methods=["GET","POST"])
+@app.route("/tulipan/agregar-Promocion", methods=["GET","POST"])
 def agregar_promocion():
     titulo = "Agregar Promocion"
     
@@ -180,7 +176,7 @@ def agregar_promocion():
     
     return render_template("agregarPromocion.html", title=titulo)
 
-@app.route("/agregar-servicio", methods=["GET","POST"])
+@app.route("/tulipan/agregar-servicio", methods=["GET","POST"])
 def agregar_servicio():
     titulo = "Agregar Servicio"
     
@@ -206,7 +202,7 @@ def agregar_servicio():
     
     return render_template("agregarServicio.html", title=titulo)
 
-@app.route('/editar/<int:id>', methods=['GET','POST'])
+@app.route('/tulipan/editar/<int:id>', methods=['GET','POST'])
 def editar(id):
     titulo = "Editar Citas"
     
@@ -220,7 +216,7 @@ def editar(id):
     
     return render_template("editarCitas.html", title=titulo, citas=citas)
 
-@app.route('/actualizar', methods=['GET','POST'])
+@app.route('/tulipan/actualizar', methods=['GET','POST'])
 def actualizar():
     if request.method == "POST":
         _nombre = request.form['nombre']
@@ -240,7 +236,7 @@ def actualizar():
         
         return redirect(url_for("lista_agendados"))
 
-@app.route('/elimiar/<int:id>')
+@app.route('/tulipan/elimiar/<int:id>')
 def eliminar(id):
     conection = mysql.connect()
     cursor = conection.cursor()
@@ -248,7 +244,7 @@ def eliminar(id):
     conection.commit()
     return redirect(url_for("lista_agendados"))
 
-@app.route('/borrar-img-galeria/<int:id>')
+@app.route('/tulipan/borrar-img-galeria/<int:id>')
 def borrar_img_galeria(id):
     conection = mysql.connect()
     cursor = conection.cursor()
@@ -262,7 +258,7 @@ def borrar_img_galeria(id):
     
     return redirect(url_for("inicio"))          
 
-@app.route('/borrar-img-noticia/<int:id>')
+@app.route('/tulipan/borrar-img-noticia/<int:id>')
 def borrar_img_noticia(id):
     conection = mysql.connect()
     cursor = conection.cursor()
@@ -276,7 +272,7 @@ def borrar_img_noticia(id):
     
     return redirect(url_for("inicio"))
 
-@app.route('/borrar-img-promocion/<int:id>')
+@app.route('/tulipan/borrar-img-promocion/<int:id>')
 def borrar_img_promocion(id):
     conection = mysql.connect()
     cursor = conection.cursor()
@@ -290,7 +286,7 @@ def borrar_img_promocion(id):
     
     return redirect(url_for("promociones"))
 
-@app.route('/borrar-servicio/<int:id>')
+@app.route('/tulipan/borrar-servicio/<int:id>')
 def borrar_servicio(id):
     conection = mysql.connect()
     cursor = conection.cursor()
@@ -304,12 +300,12 @@ def borrar_servicio(id):
     
     return redirect(url_for("servicios")) 
 
-@app.route('/agendar', methods=['GET','POST'])
+@app.route('/tulipan/agendar', methods=['GET','POST'])
 def agendar():
     titulo = "Agendar"
     return render_template("agendar.html",title=titulo)   
 
-@app.route('/cita', methods=['GET', 'POST'])
+@app.route('/tulipan/cita', methods=['GET', 'POST'])
 def cita():
     if request.method == "POST":
         _nombre = request.form['nombre']
@@ -328,7 +324,7 @@ def cita():
         
         return redirect(url_for("lista_agendados"))
 
-@app.route("/agendar-cita", methods=["GET","POST"])
+@app.route("/tulipan/agendar-cita", methods=["GET","POST"])
 def agendar_cita():
     titulo = "Agendar Cita"
     
@@ -347,7 +343,7 @@ def agendar_cita():
         
     return render_template("agendarCita.html", title=titulo)
 
-@app.route("/iniciar-sesion", methods=["GET","POST"])
+@app.route("/tulipan/iniciar-sesion", methods=["GET","POST"])
 def inicio_sesion():
     titulo = "Iniciar Sesion"
     
@@ -371,7 +367,7 @@ def inicio_sesion():
         
     return render_template("iniciarSesion.html", title=titulo)
 
-@app.route("/cambiar-contraseña", methods=["GET","POST"])
+@app.route("/tulipan/cambiar-contraseña", methods=["GET","POST"])
 def cambio_contraseña():
     titulo = "Cambiar Contraseña"
     
@@ -389,7 +385,7 @@ def cambio_contraseña():
         
     return render_template("cambiarContraseña.html", title=titulo)
 
-@app.route("/salir")
+@app.route("/tulipan/salir")
 def salir():
     session.clear()
     return redirect(url_for("inicio"))

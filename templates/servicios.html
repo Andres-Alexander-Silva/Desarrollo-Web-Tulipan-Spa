@@ -16,7 +16,7 @@
             </div>
             {% if "usuario" in session %}
                 <div class="btn-servis">
-                    <a href="/agregar-servicio" class="btn-agregar-servis">Agregar Servicio</a>
+                    <a href="agregar-servicio" class="btn-agregar-servis">Agregar Servicio</a>
                 </div>
             {% endif %}
             <div class="contend-servis">
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         {% if "usuario" in session %}                            
-                            <a href="/borrar-servicio/{{servi[0]}}" class="borrar-servi">Borrar</a>
+                            <a href="borrar-servicio/{{servi[0]}}" class="borrar-servi">Borrar</a>
                         {% endif %}
                     </div>
                 {% endfor %}

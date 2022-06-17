@@ -16,7 +16,7 @@
             </div>
             {% if "usuario" in session %}
                 <div class="buttom">
-                    <a href="/agendar" class="agregar-cita">Agregar Cita</a>
+                    <a href="agendar" class="agregar-cita">Agregar Cita</a>
                 </div>
             {% endif %}
             <table class="lista-agendados">
@@ -39,8 +39,8 @@
                             <td>{{cita[4]}}</td>
                             <td>{{cita[5]}}</td>
                             <td>
-                                <a href="/editar/{{cita[0]}}" class="editar">Editar</a> |
-                                <a href="/elimiar/{{cita[0]}}" class="eliminar">Eliminar</a> 
+                                <a href="editar/{{cita[0]}}" class="editar">Editar</a> |
+                                <a href="elimiar/{{cita[0]}}" class="eliminar">Eliminar</a> 
                             </td>
                         </tr>
                     {% endfor %}

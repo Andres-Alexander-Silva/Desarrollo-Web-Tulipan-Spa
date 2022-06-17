@@ -15,7 +15,7 @@
         </div>
         {% if "usuario" in session %} 
             <div class="buttom">
-                <a href="/agregar-imagen" class="agregar-img">Agregar imagen</a>
+                <a href="agregar-imagen" class="agregar-img">Agregar imagen</a>
             </div>
         {% endif %}
         <div class="seccion1">
@@ -25,7 +25,7 @@
                             <img src="static/galeria/{{galeria[1]}}" alt="foto" class="imgs">
                         </div>
                         {% if "usuario" in session %}
-                            <a href="/borrar-img-galeria/{{galeria[0]}}" class="borrar-img">Borrar</a>
+                            <a href="borrar-img-galeria/{{galeria[0]}}" class="borrar-img">Borrar</a>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -35,7 +35,7 @@
         </div>
         {% if "usuario" in session %}
         <div class="buttom">
-            <a href="/agregar-noticia" class="agregar-prom-noti">Agregar Noticias</a>
+            <a href="agregar-noticia" class="agregar-prom-noti">Agregar Noticias</a>
         </div>
         {% endif %}
         <div class="seccion2">
@@ -45,7 +45,7 @@
                             <img src="static/noticias/{{noti[1]}}" alt="promocion" class="imgs2">
                         </div>
                         {% if "usuario" in session %}                            
-                            <a href="/borrar-img-noticia/{{noti[0]}}" class="borrar-noti">Borrar</a>
+                            <a href="borrar-img-noticia/{{noti[0]}}" class="borrar-noti">Borrar</a>
                         {% endif %}
                     {% endfor %}
                 </div>

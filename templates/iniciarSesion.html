@@ -14,7 +14,7 @@
             <div class="content-img">
                 <img src="{{ url_for('static', filename='img/logo-Tulipan-Spa.png') }}" alt="logo" class="logo">
             </div>
-            <form action="/iniciar-sesion" class="formulario" method="POST">
+            <form action="/tulipan/iniciar-sesion" class="formulario" method="POST">
                 <div class="usuario">
                     <i class="fa-solid fa-user icono-user"></i>
                     <input type="text" class="user" name="usuario" placeholder="Usuario" required>
@@ -24,7 +24,7 @@
                     <input type="password" class="pass" name="contraseña" placeholder="Contraseña" required>
                 </div>
                 <div class="contra-olvi">
-                    <a href="/cambiar-contraseña">Olvistate tu contraseña?</a>
+                    <a href="cambiar-contraseña">Olvistate tu contraseña?</a>
                 </div>
                 <div class="btn">
                     <input type="submit" value="Iniciar">

@@ -16,7 +16,7 @@
             </div>
             {% if "usuario" in session %}
                 <div class="btns-prom">
-                    <a href="/agregar-Promocion" class="btn-agregar-prom">Agregar Promoción</a>
+                    <a href="agregar-Promocion" class="btn-agregar-prom">Agregar Promoción</a>
                 </div>
             {% endif %}
             {% for prom in promociones %}    
@@ -26,7 +26,7 @@
                             <img src="static/promociones/{{prom[1]}}" alt="promocion" class="foto-prom">
                         </a>
                         {% if "usuario" in session %}                            
-                            <a href="/borrar-img-promocion/{{prom[0]}}" class="borrar-prom">Borrar</a>
+                            <a href="borrar-img-promocion/{{prom[0]}}" class="borrar-prom">Borrar</a>
                         {% endif %}
                     </div>
                 </div>

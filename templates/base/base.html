@@ -15,23 +15,23 @@
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
             </label>
-            <a href="/inicio" class="enlace">
+            <a href="inicio" class="enlace">
                 <img src="{{ url_for('static', filename='img/logo-Tulipan.png') }}" alt="Tulipan Spa" class="logo">
             </a>
             <ul>
                 {% if "usuario" in session %}
-                    <li><a href="/inicio">Inicio</a></li>
-                    <li><a href="/servicios">Servicios</a></li>
-                    <li><a href="/promociones">Promociones</a></li>
-                    <li><a href="/agendar-cita">Agendar Cita</a></li>
-                    <li><a href="/lista-agendados">Citas Agendadas</a></li>
-                    <li><a href="/salir">Cerrar Sesion</a></li>
+                    <li><a href="inicio">Inicio</a></li>
+                    <li><a href="servicios">Servicios</a></li>
+                    <li><a href="promociones">Promociones</a></li>
+                    <li><a href="agendar-cita">Agendar Cita</a></li>
+                    <li><a href="lista-agendados">Citas Agendadas</a></li>
+                    <li><a href="salir">Cerrar Sesion</a></li>
                 {% else %}
-                    <li><a href="/inicio">Inicio</a></li>
-                    <li><a href="/servicios">Servicios</a></li>
-                    <li><a href="/promociones">Promociones</a></li>
-                    <li><a href="/agendar-cita">Agendar Cita</a></li>
-                    <li><a href="/iniciar-sesion">Iniciar Sesion</a></li>
+                    <li><a href="inicio">Inicio</a></li>
+                    <li><a href="servicios">Servicios</a></li>
+                    <li><a href="promociones">Promociones</a></li>
+                    <li><a href="agendar-cita">Agendar Cita</a></li>
+                    <li><a href="iniciar-sesion">Iniciar Sesion</a></li>
                 {% endif %}
             </ul>
         </nav>
