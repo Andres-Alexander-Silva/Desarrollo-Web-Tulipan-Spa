@@ -109,6 +109,11 @@
         font-size: 25px;
     }
 
+    .form-agendar{
+        width: 300px;
+        margin: 20px 0;
+    }
+
     .txt-nombre, .txt-num-cell, .txt-servicio, .txt-colaboradora,
     .txt-fecha{
         height: 40px;

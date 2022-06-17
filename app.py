@@ -51,6 +51,9 @@ def servicio(nombreFoto):
     return send_from_directory(app.config['SERVICIO'],nombreFoto)
 
 @app.route("/")
+def index():
+    return render_template('base/base.html')
+
 @app.route("/inicio")
 def inicio():
     titulo = "Tulipan Spa"
@@ -339,7 +342,7 @@ def agendar_cita():
         
         if _nombre != "" and _apellido != "" and _telefono != "" and _servicio and _colaboradora != "":
             _mensaje = _nombre+" "+_apellido+" "+_telefono+" "+_servicio+" "+_colaboradora+" "+_fecha
-            url = "https://api.whatsapp.com/send?phone=573203410602&text="+_mensaje
+            url = "https://api.whatsapp.com/send?phone=573023813733&text="+_mensaje
             web.open_new(url)
         
     return render_template("agendarCita.html", title=titulo)
@@ -351,7 +354,7 @@ def inicio_sesion():
     if request.method == "POST":
         _usuario = request.form["usuario"]
         _contrasegna = request.form["contraseña"]
-        
+                
         sql = "SELECT * FROM usuarios WHERE usuario = %s;"
         datos = (_usuario)
         conection = mysql.connect()

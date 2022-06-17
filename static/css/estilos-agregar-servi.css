@@ -120,3 +120,14 @@ form {
     transition: all .2s;
     border: 2px solid #E58183;
 }
+@media (max-width: 800px){
+    main{
+        padding: 20px;
+        min-height: 100vh;
+        background-image: url("../img/fondo-responsive.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+}
