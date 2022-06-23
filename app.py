@@ -50,6 +50,7 @@ def promocion(nombreFoto):
 def servicio(nombreFoto):
     return send_from_directory(app.config['SERVICIO'],nombreFoto)
 
+@app.route("/")
 @app.route("/tulipan/inicio")
 def inicio():
     titulo = "Tulipan Spa"
