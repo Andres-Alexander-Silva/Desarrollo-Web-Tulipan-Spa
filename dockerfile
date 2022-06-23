@@ -1,4 +1,5 @@
-FROM python:3.8-alpine3.15
+FROM tiangolo/uwsgi-nginx-flask:python3.8
+#FROM python:3.8-alpine3.15
 WORKDIR /website-TulipanSpa
 COPY requirements.txt /website-TulipanSpa/
 RUN pip install -r requirements.txt
